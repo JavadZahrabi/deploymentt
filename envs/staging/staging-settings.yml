@@ -11,5 +11,5 @@ spec:
         env:
         - name: ENV
           value: "staging"
-        - name: GPU_ENABLED
-          value: "1"
+        - name: UI_THEME
+          value: "light"

@@ -9,8 +9,8 @@ spec:
       containers:
       - name: webserver-simple
         env:
-        - name: UI_THEME
-          value: "dark"
+        - name: GPU_ENABLED
+          value: "1"
         - name: CACHE_SIZE
           value: "1024kb"
         - name: PAGE_LIMIT
