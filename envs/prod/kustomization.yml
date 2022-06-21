@@ -11,7 +11,7 @@ components:
   - ../../variants/prod
 
 patchesStrategicMerge:
-- deployment.yml
+- prod-settings.yml
 - version.yml
 - replicas.yml
 - settings.yml
