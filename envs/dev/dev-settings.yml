@@ -11,3 +11,5 @@ spec:
         env:
         - name: ENV
           value: "dev"
+        - name: UI_THEME
+          value: "light"
