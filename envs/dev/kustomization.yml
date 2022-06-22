@@ -11,7 +11,7 @@ components:
   - ../../variants/non-prod
 
 patchesStrategicMerge:
-- dev-settings.yml
+- deployment.yml
 - version.yml
 - replicas.yml
 - settings.yml
