@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/JavadZahrabi/gitops-environment-promotion_03'
+    repoURL: 'https://github.com/JavadZahrabi/deployment'
     targetRevision: HEAD
     path: envs/staging
   destination:
