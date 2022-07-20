@@ -33,3 +33,24 @@ jobs:
             git config user.email ja.zahrabi@gmail.com
             git commit -am "version.yml promoted from staging to prod"
             git push --set-upstream -f origin prod
+  
+  Prod-Auto-PR:
+    needs: [promote-version]
+    runs-on: ubuntu-latest
+
+    steps:
+
+        - name: Open PR to master from prod
+          uses: actions/checkout@v3
+          name: checkout
+
+        - uses: repo-sync/pull-request@v2
+        name: pull-request
+        with:
+          destination_branch: "master"
+          #pr_title: "Pulling ${{ github.ref }} into master"
+          pr_title: "promote staging version to prod"
+          pr_body: "An automated PR from prod"
+          pr_reviewer: "JavadZahrabi"
+          pr_draft: true
+          github_token: ${{ secrets.ACTIONS_TOKEN }}
