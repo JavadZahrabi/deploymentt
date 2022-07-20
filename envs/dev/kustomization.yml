@@ -14,4 +14,3 @@ patchesStrategicMerge:
 - dev-settings.yml
 - version.yml
 - replicas.yml
-- settings.yml
