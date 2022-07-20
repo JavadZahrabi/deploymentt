@@ -1,11 +1,11 @@
 
-name: dev-staging-version-promotion
+name: staging-prod-version-promotion
 
 on:
   push:
     branches: [ "master" ]
     paths:
-      - 'envs/dev/version.yml'
+      - 'envs/staging/version.yml'
 
 jobs:
 
@@ -23,12 +23,13 @@ jobs:
 
         - name: copy version.yml
           run: |
-              cp -R ./deployment/envs/dev/version.yml ./deployment/envs/staging
-        - name: Push version to staging
+              cp -R ./deployment/envs/staging/version.yml ./deployment/envs/prod
+        - name: Push version to prod
           run: |
             cd ./deployment
+            git checkout -b "prod"
             git add .
             git config user.name JavadZahrabi
             git config user.email ja.zahrabi@gmail.com
-            git commit -am "version.yml promoted to staging"
-            git push
+            git commit -am "version.yml promoted from staging to prod"
+            git push --set-upstream -f origin prod
