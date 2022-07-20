@@ -8,10 +8,11 @@ spec:
   source:
     repoURL: 'https://github.com/JavadZahrabi/gitops-environment-promotion_03'
     targetRevision: HEAD
-    path: envs/staging
+    path: envs/prod
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: staging
+    namespace: prod
+  revisionHistoryLimit: 3
   syncPolicy:
     automated:
       prune: true
