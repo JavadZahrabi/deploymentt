@@ -2,10 +2,10 @@
 name: staging-prod-version-promotion
 
 on:
-  push:
-    branches: [ "master" ]
-    paths:
-      - 'envs/staging/version.yml'
+  workflow_run:
+    workflows: [ "dev-staging-version-promotion" ]
+    types:
+      - completed
 
 jobs:
 
