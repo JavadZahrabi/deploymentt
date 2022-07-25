@@ -1,6 +1,4 @@
-
 name: staging-prod-version-promotion
-
 on:
   workflow_run:
     workflows: [ "dev-staging-version-promotion" ]
@@ -24,6 +22,7 @@ jobs:
         - name: copy version.yml
           run: |
               cp -R ./deployment/envs/staging/version.yml ./deployment/envs/prod
+        
         - name: Push version to prod
           run: |
             cd ./deployment
@@ -48,7 +47,6 @@ jobs:
           with:
             source_branch: "prod"
             destination_branch: "master"
-            #pr_title: "Pulling ${{ github.ref }} into master"
             pr_title: "promote staging version to prod"
             pr_body: "An automated PR from prod"
             pr_reviewer: "JavadZahrabi"
