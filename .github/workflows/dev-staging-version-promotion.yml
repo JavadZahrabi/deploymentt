@@ -17,16 +17,16 @@ jobs:
         - name: Checkout Deployment repository
           uses: actions/checkout@v3
           with:
-            repository: JavadZahrabi/deployment
-            path: ./deployment
+            repository: JavadZahrabi/deploymentt
+            path: ./deploymentt
 
         - name: copy version.yml
           run: |
-              cp -R ./deployment/envs/dev/version.yml ./deployment/envs/staging
+              cp -R ./deploymentt/envs/dev/version.yml ./deploymentt/envs/staging
         
         - name: Push version to staging
           run: |
-            cd ./deployment
+            cd ./deploymentt
             git add .
             git config user.name JavadZahrabi
             git config user.email ja.zahrabi@gmail.com

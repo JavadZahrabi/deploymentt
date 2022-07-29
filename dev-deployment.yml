@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/JavadZahrabi/deployment'
+    repoURL: 'https://github.com/JavadZahrabi/deploymentt'
     targetRevision: HEAD
     path: envs/dev
   destination:
